@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class ResourceCentre {
 
 
+	private static final int Option_Quit = 5;// extract constant
 	public static void main(String[] args) {
 
 		ArrayList<Camcorder> camcorderList = new ArrayList<Camcorder>();
@@ -15,7 +16,7 @@ public class ResourceCentre {
 
 		int option = 0;
 
-		while (option != 5) {
+		while (option != Option_Quit) {
 
 			ResourceCentre.menu();
 			option = Helper.readInt("Enter an option > ");
@@ -158,6 +159,10 @@ public class ResourceCentre {
 	}
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
 		
+		viewCB(chromebookList);// extract method
+	}
+
+	private static void viewCB(ArrayList<Chromebook> chromebookList) {
 		ResourceCentre.setHeader("CHROMEBOOK LIST");
 		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
 				 "AVAILABLE", "DUE DATE","OPERATING SYSTEM");
